@@ -42,7 +42,8 @@ func generateClass(pkgName string) (*File, error) {
 	for _, class := range data.GameData.Classes {
 		for _, spec := range class.Specs {
 			className := strings.ReplaceAll(class.Name, " ", "")
-			classSpecName := fmt.Sprintf("%s-%s", className, spec.Name)
+			specName := strings.ReplaceAll(spec.Name, " ", "")
+			classSpecName := fmt.Sprintf("%s-%s", className, specName)
 			if Contains(HealAssociation, classSpecName) {
 				healSpecs = append(healSpecs, classSpecName)
 			} else {
