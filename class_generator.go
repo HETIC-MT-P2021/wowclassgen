@@ -3,9 +3,10 @@ package main
 import (
 	"context"
 	"fmt"
+	"strings"
+
 	. "github.com/dave/jennifer/jen"
 	"github.com/machinebox/graphql"
-	"strings"
 )
 
 const BaseURL = "https://www.warcraftlogs.com/api/v2/client/"
