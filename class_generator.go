@@ -5,6 +5,7 @@ import (
 	"fmt"
 	. "github.com/dave/jennifer/jen"
 	"github.com/machinebox/graphql"
+	"strings"
 )
 
 const BaseURL = "https://www.warcraftlogs.com/api/v2/client/"
@@ -40,7 +41,8 @@ func generateClass(pkgName string) (*File, error) {
 	var healSpecs []string
 	for _, class := range data.GameData.Classes {
 		for _, spec := range class.Specs {
-			classSpecName := fmt.Sprintf("%s-%s", class.Name, spec.Name)
+			className := strings.ReplaceAll(class.Name, " ", "")
+			classSpecName := fmt.Sprintf("%s-%s", className, spec.Name)
 			if Contains(HealAssociation, classSpecName) {
 				healSpecs = append(healSpecs, classSpecName)
 			} else {
