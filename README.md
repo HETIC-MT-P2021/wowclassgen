@@ -4,7 +4,9 @@ Simple generator to create maps in Go using [warcraft logs](https://www.warcraft
 
 It generates :
 
-- 
+- A dict of current wow classes and their warlog IDs
+- A list of Healer classes, with a point counter initialized to 0
+- A list of DPS classes, with a point counter initialized to 0
 
 ## Usage
 
