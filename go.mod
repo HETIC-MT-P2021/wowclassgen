@@ -1,4 +1,4 @@
-module github.com/Araknyfe/wowclassgen
+module github.com/HETIC-MT-P2021/wowclassgen
 
 go 1.17
 
