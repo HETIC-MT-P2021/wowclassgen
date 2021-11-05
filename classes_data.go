@@ -27,7 +27,16 @@ var HealAssociation = []string{
 	"Shaman-Restoration",
 }
 
-func Contains(haystack []string, needle string) bool {
+var TankAssociation = []string{
+	"DeathKnight-Blood",
+	"DemonHunter-Vengeance",
+	"Druid-Guardian",
+	"Monk-Brewmaster",
+	"Paladin-Protection",
+	"Warrior-Protection",
+}
+
+func contains(haystack []string, needle string) bool {
 	for _, str := range haystack {
 		if needle == str {
 			return true

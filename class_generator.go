@@ -45,9 +45,13 @@ func generateClass(pkgName string) (*File, error) {
 			className := strings.ReplaceAll(class.Name, " ", "")
 			specName := strings.ReplaceAll(spec.Name, " ", "")
 			classSpecName := fmt.Sprintf("%s-%s", className, specName)
-			if Contains(HealAssociation, classSpecName) {
+
+			switch true {
+			case contains(HealAssociation, classSpecName):
 				healSpecs = append(healSpecs, classSpecName)
-			} else {
+			case contains(TankAssociation, classSpecName):
+				continue
+			default:
 				DPSSpecs = append(DPSSpecs, classSpecName)
 			}
 		}
